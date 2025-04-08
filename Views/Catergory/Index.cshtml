@@ -1,0 +1,32 @@
+@model List<Catergory>
+
+<h1>catergoryList</h1>
+<a asp-controller="Catergory" asp-action="Add">Add catergory</a>
+<table class="table table-bordered table-striped">
+    
+    <thead>
+    <tr>
+        <th>
+            catergory  name
+        </th>
+        <th>
+            Display order
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach( var obj in Model.OrderBy(u=> u.DisplayOrder))
+        {
+            <tr>
+                <td>
+                    @obj.Name
+                </td>
+                <td>
+                    @obj.DisplayOrder
+                </td>
+            </tr>
+        }
+    
+    </tbody>
+    
+</table>
