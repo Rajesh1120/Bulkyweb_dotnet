@@ -1,8 +1,14 @@
+@model  Catergory
+
 <h1>add catergory</h1>
-<form>
-    <label>Name</label>
-    <input  type="text" required />
-    <label>displayOrder</label>
-    <input  type="text" required/>
+<form method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <label asp-for="Name"></label>
+    <input asp-for="Name"  />
+    <span asp-validation-for="Name" class="text-danger"></span>
+    <label asp-for="DisplayOrder"></label>
+    <input asp-for="DisplayOrder" />
+    <span asp-validation-for="DisplayOrder" class="text-danger"></span>
     <button type="submit">Submit</button>
+    <a asp-controller="Catergory" asp-action="Index">Back to List</a>
 </form>
